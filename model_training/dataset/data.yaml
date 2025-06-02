@@ -1,0 +1,15 @@
+names:
+- green-traffic-light
+- green-traffic-lights
+- red-traffic-lights
+- traffic-lights
+nc: 4
+roboflow:
+  license: CC BY 4.0
+  project: traffic-light-kigje-ipbfa
+  url: https://universe.roboflow.com/personal-wikpv/traffic-light-kigje-ipbfa/dataset/1
+  version: 1
+  workspace: personal-wikpv
+test: dataset/test/images
+train: dataset/train/images
+val: dataset/valid/images
