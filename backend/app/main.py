@@ -4,10 +4,10 @@ from app.model.predictor import predict_traffic_light
 
 app = FastAPI()
 
-# Allow frontend to connect (important for React/Flutter)
+# Allow frontend to connect
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Adjust this in production
+    allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -19,5 +19,5 @@ def home():
 @app.post("/predict")
 async def predict(file: UploadFile = File(...)):
     image_bytes = await file.read()
-    labels = predict_traffic_light(image_bytes)
-    return {"predictions": labels}
+    prediction = predict_traffic_light(image_bytes)
+    return {"prediction": prediction}
